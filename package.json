@@ -7,7 +7,7 @@
           "build": "vite build",
           "preview": "vite preview",
           "predeploy": "npm run build",
-          "deploy": "gh-pages -d dist --repo=https://github.com/ViniTrinda/Portfolio.git"
+          "deploy": "npm run build && git checkout gh-pages && del * /Q && copy dist\\*.* . && git add . && git commit -m 'deploy' && git push origin gh-pages --force && git checkout main"
      },
      "dependencies": {
           "gsap": "^3.12.7",
