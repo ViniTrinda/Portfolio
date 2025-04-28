@@ -7,7 +7,7 @@
           "build": "vite build",
           "preview": "vite preview",
           "predeploy": "npm run build",
-          "deploy": "npm run build && git checkout gh-pages && Get-ChildItem -Exclude dist, .gitignore | Remove-Item -Recurse -Force && Copy-Item -Path .\\dist\\* -Destination .\\ -Recurse -Force && Remove-Item -Recurse -Force .\\dist\\ && git add . && git commit -m 'deploy' && git push origin gh-pages --force && git checkout main"
+          "deploy": "npm run build && git checkout gh-pages && del /q /f * && del /q /f /s .gitignore && xcopy .\\dist\\* .\\ /s /e /h /y && rmdir /s /q .\\dist\\ && git add . && git commit -m 'deploy' && git push origin gh-pages --force && git checkout main"
      },
      "dependencies": {
           "gsap": "^3.12.7",
