@@ -1,0 +1,23 @@
+{
+     "homepage": "https://vinitrinda.github.io/Portfolio/",
+     "name": "main",
+     "version": "1.0.0",
+     "scripts": {
+          "dev": "vite",
+          "build": "vite build",
+          "preview": "vite preview",
+          "predeploy": "npm run build",
+          "deploy": "gh-pages -d dist --repo=https://github.com/ViniTrinda/Portfolio.git"
+     },
+     "dependencies": {
+          "gsap": "^3.12.7",
+          "react": "^19.1.0",
+          "three": "^0.175.0"
+     },
+     "devDependencies": {
+          "gh-pages": "^6.3.0",
+          "sass-embedded": "^1.87.0",
+          "vite": "^6.3.3",
+          "vite-plugin-glsl": "^1.4.1"
+     }
+}

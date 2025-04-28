@@ -1,0 +1,399 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+:root {
+     --color-white: #fff;
+     --color-dark: #505050;
+}
+body,
+html {
+     height: 100vh;
+     width: 100vw;
+     overflow-x: hidden;
+     background-color: #101010;
+     color: #fff;
+}
+canvas {
+     z-index: 1000;
+}
+
+
+.container {
+     height: 100%;
+     width: 100%;
+     z-index: 1000;
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #101010;
+}
+.main {
+     border: solid 1px rgb(255, 255, 255, 0.5);
+     width: 96.25%;
+     height: 92%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: flex-start;
+     background-color: #101010;
+     overflow: hidden;
+}
+
+.title {
+     height: 15vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: flex-start;
+     padding: 35px;
+     font-family: "Plus Jakarta Sans", sans-serif;
+     color: rgb(255, 255, 255, 0.9);
+}
+.name {
+     font-size: 3em;
+     font-weight: 200;
+     font-style: italic;
+     color: rgb(255, 255, 255, 0.8);
+}
+.subtitle {
+     padding-left: 17px;
+     font-size: 0.88em;
+     color: rgb(255, 255, 255, 0.7);
+}
+.asides {
+     flex: 1;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+}
+.asides > div {
+     width: 50%;
+     height: 100%;
+}
+.list {
+     padding: 20px 55px;
+     color: rgb(255, 255, 255, 1);
+     font-family: "Plus Jakarta Sans", sans-serif;
+     font-weight: 200;
+}
+.list ul {
+     font-size: 0.9em;
+     list-style: none;
+     width: 15%;
+     height: 15%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: flex-start;
+     gap: 7.5%;
+}
+
+.list ul li {
+     width: 15%;
+     width: 100%;
+     transition: 0.25s;
+}
+.list ul li:hover {
+     scale: 1.075;
+     cursor: pointer;
+     opacity: 90%;
+}
+
+.info {
+     display: flex;
+     align-items: flex-start;
+     justify-content: flex-end;
+     padding: 40px;
+     position: relative;
+}
+#desc {
+     height: 100%;
+     width: 30%;
+     text-align: justify;
+     font-family: "Plus Jakarta Sans", sans-serif;
+     font-weight: 200;
+     font-size: 13px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: flex-end;
+     position: absolute;
+     bottom: 40px;
+     color: #fff;
+}
+
+#projects {
+     height: 100%;
+     width: 50%;
+     padding: 10px;
+     display: none;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: flex-start;
+     overflow-y: scroll;
+     gap: 2.5%;
+     mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          black 5%,
+          black 90%,
+          transparent
+     );
+     position: absolute;
+
+}
+#projects a {
+     font-family: "Plus Jakarta Sans", sans-serif;
+     font-weight: 200;
+     color: white;
+     text-decoration: none;
+     font-style: italic;
+     height: 10%;
+     opacity: 70%;
+     transition: 0.25s;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: flex-start;
+}
+
+#project{
+     font-size: 3em;
+     width: 100%;
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-end;
+     color: #fff;
+}
+#proj-subtitle{
+     font-size: 12px;
+     width: 100%;
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-end;
+     opacity: 80%;
+}
+
+#projects a:hover {
+     scale: 1.05;
+     opacity: 100%;
+}
+
+#projects::-webkit-scrollbar {
+     display: none;
+}
+#ctt-content {
+     display: none;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: flex-end;
+     gap: 35px;
+     text-transform: lowercase;
+     font-weight: 200;
+     font-size: 0.7em;
+     position: absolute;
+     bottom: 75px;
+     color: #fff;
+}
+
+#ctt-content i {
+     display: flex;
+     gap: 10px;
+}
+#ctt-content i p {
+     display: flex;
+     align-items: flex-start;
+     justify-content: flex-start;
+     font-family: "Plus Jakarta Sans", sans-serif;
+     color: #fff;
+}
+#ctt-content i p a{
+     transition: 0.25s;
+     color: #fff;
+}
+#ctt-content i p a:hover{
+     scale: 1.075;
+     cursor: pointer;
+}
+
+.fade {
+     opacity: 0;
+     transition: opacity 0.25s ease;
+     position: absolute;
+}
+
+.show {
+     opacity: 1;
+     transition: opacity 0.25s ease;
+     position: absolute;
+}
+
+@media screen and (width <= 1440px){
+     #desc{
+          width: 60%;
+     }
+}
+
+
+@media screen and (width <= 1024px) {
+     .asides{
+          flex-direction: column;
+          /* border: solid 1px red; */
+     }
+     .asides > div{
+          width: 100%;
+          height: 50%;
+     }
+     .info{
+          /* border: solid 1px blue; */
+          align-items: center;
+          justify-content: flex-end;
+
+     }
+     #desc{
+          width: 40%;
+          height: 100%;
+          bottom: 20px;
+          justify-content: center;
+     }
+     #projects{
+          gap: 15%;
+          height: 100%;
+     }
+     #proj-subtitle{
+          font-size: 10px;
+     }
+
+}
+
+@media screen and (width <= 824){
+     #desc{
+          width: 55%;
+     }
+}
+
+@media screen and (width <= 730px){
+     .info{
+          padding: 20px;
+     }
+     
+     #desc{
+          width: 65%;
+
+     }
+     #projects{
+          height: 80%;
+          gap: 20%;
+          bottom: 10px;
+     }
+}
+
+@media screen and (width <= 580px){
+     .main{
+          height: 95%;
+     }
+     .title{
+          justify-content: center;
+          align-items: center;
+     }
+     .name{
+          font-size: 2.7em;
+          padding: 0;
+          margin: 0;
+     }
+     .subtitle{
+          padding-top: 3px;
+          padding-left: 0px;
+          font-size: 0.70em;
+
+     }
+
+     .list ul{
+          width: 100%;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 10%;
+     }
+     .list ul li{
+          width: 20%;
+          height: 100%;
+          padding: 5px;
+          font-size: 1.2em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+     }
+     .info{
+          padding: 0;
+          position: relative;
+          justify-content: center;
+     }
+
+     #desc{
+          bottom: 0;
+          width: 90%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+     }
+     #projects{
+          bottom: 0px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 95%;
+          height: 90%;
+          align-items: center;
+          justify-content: center;
+          gap: 5%;
+          padding-bottom: 10%;
+     }
+     #projects a{
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+     }
+     #ctt-content{
+          align-items: center;
+          justify-content: center;
+     }
+}
+
+@media screen and (width <= 445px){
+     .name{
+          font-size: 2.3em;
+     }
+     .subtitle{
+          font-size: 0.6em;
+     }
+
+     .list ul{
+          gap: 20%;
+     }
+     #projects{
+          justify-content: space-between;
+          gap: auto;
+     }
+
+     #projects a{
+          height: fit-content;
+          width: 45%;
+          
+     }
+     #project{
+          align-items: flex-start;
+          justify-content: flex-start;
+          font-size: 1.75em;
+     }
+     #proj-subtitle{
+          font-size: 10px;
+          justify-content: flex-start;
+     }
+}
