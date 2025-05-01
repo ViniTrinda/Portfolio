@@ -19,7 +19,6 @@ canvas {
      z-index: 1000;
 }
 
-
 .container {
      height: 100%;
      width: 100%;
@@ -72,15 +71,13 @@ canvas {
      justify-content: center;
      position: relative;
 }
-.asides > div {
-     width: 50%;
-     height: 100%;
-}
 .list {
      padding: 20px 55px;
      color: rgb(255, 255, 255, 1);
      font-family: "Plus Jakarta Sans", sans-serif;
      font-weight: 200;
+     width: 50%;
+     height: 100%;
 }
 .list ul {
      font-size: 0.9em;
@@ -111,6 +108,8 @@ canvas {
      justify-content: flex-end;
      padding: 40px;
      position: relative;
+     width: 50%;
+     height: 100%;
 }
 #desc {
      height: 100%;
@@ -145,7 +144,6 @@ canvas {
           transparent
      );
      position: absolute;
-
 }
 #projects a {
      font-family: "Plus Jakarta Sans", sans-serif;
@@ -163,7 +161,7 @@ canvas {
      justify-content: flex-start;
 }
 
-#project{
+#project {
      font-size: 3em;
      width: 100%;
      display: flex;
@@ -171,7 +169,7 @@ canvas {
      justify-content: flex-end;
      color: #fff;
 }
-#proj-subtitle{
+#proj-subtitle {
      font-size: 12px;
      width: 100%;
      display: flex;
@@ -213,11 +211,11 @@ canvas {
      font-family: "Plus Jakarta Sans", sans-serif;
      color: #fff;
 }
-#ctt-content i p a{
+#ctt-content i p a {
      transition: 0.25s;
      color: #fff;
 }
-#ctt-content i p a:hover{
+#ctt-content i p a:hover {
      scale: 1.075;
      cursor: pointer;
 }
@@ -234,94 +232,92 @@ canvas {
      position: absolute;
 }
 
-@media screen and (width <= 1440px){
-     #desc{
+@media screen and (width <= 1440px) {
+     #desc {
           width: 60%;
      }
 }
 
-
 @media screen and (width <= 1024px) {
-     .asides{
+     .asides {
           flex-direction: column;
-          /* border: solid 1px red; */
+
+
      }
-     .asides > div{
+     .list{
           width: 100%;
           height: 50%;
      }
-     .info{
+     .info {
           /* border: solid 1px blue; */
           align-items: center;
           justify-content: flex-end;
-
+          width: 100%;
+          height: 50%;
      }
-     #desc{
+     #desc {
           width: 40%;
           height: 100%;
           bottom: 20px;
           justify-content: center;
      }
-     #projects{
+     #projects {
           gap: 15%;
           height: 100%;
      }
-     #proj-subtitle{
+     #proj-subtitle {
           font-size: 10px;
      }
-
 }
 
-@media screen and (width <= 824){
-     #desc{
+@media screen and (width <= 824) {
+     #desc {
           width: 55%;
      }
 }
 
-@media screen and (width <= 730px){
-     .info{
+@media screen and (width <= 730px) {
+     .info {
           padding: 20px;
      }
-     
-     #desc{
-          width: 65%;
 
+     #desc {
+          width: 65%;
      }
-     #projects{
+     #projects {
           height: 80%;
           gap: 20%;
           bottom: 10px;
      }
 }
 
-@media screen and (width <= 580px){
-     .main{
+@media screen and (width <= 580px) {
+     .main {
           height: 95%;
      }
-     .title{
+     .title {
           justify-content: center;
           align-items: center;
      }
-     .name{
+     .name {
           font-size: 2.7em;
           padding: 0;
           margin: 0;
      }
-     .subtitle{
+     .subtitle {
           padding-top: 3px;
           padding-left: 0px;
-          font-size: 0.70em;
-
+          font-size: 0.7em;
      }
 
-     .list ul{
+     .list ul {
           width: 100%;
           flex-direction: row;
           align-items: center;
           justify-content: center;
           gap: 10%;
      }
-     .list ul li{
+     .list ul li {
           width: 20%;
           height: 100%;
           padding: 5px;
@@ -330,20 +326,20 @@ canvas {
           align-items: center;
           justify-content: center;
      }
-     .info{
+     .info {
           padding: 0;
           position: relative;
           justify-content: center;
      }
 
-     #desc{
+     #desc {
           bottom: 0;
           width: 90%;
           height: 100%;
           align-items: center;
           justify-content: center;
      }
-     #projects{
+     #projects {
           bottom: 0px;
           flex-direction: row;
           flex-wrap: wrap;
@@ -354,46 +350,61 @@ canvas {
           gap: 5%;
           padding-bottom: 10%;
      }
-     #projects a{
+     #projects a {
           width: 40%;
           display: flex;
           align-items: center;
           justify-content: flex-end;
      }
-     #ctt-content{
+     #ctt-content {
           align-items: center;
           justify-content: center;
      }
 }
 
-@media screen and (width <= 445px){
-     .name{
+@media screen and (width <= 445px) {
+     .name {
           font-size: 2.3em;
      }
-     .subtitle{
+     .subtitle {
           font-size: 0.6em;
      }
 
-     .list ul{
+     .list ul {
           gap: 20%;
      }
-     #projects{
+     #projects {
           justify-content: space-between;
           gap: auto;
      }
 
-     #projects a{
+     #projects a {
           height: fit-content;
           width: 45%;
-          
      }
-     #project{
+     #project {
           align-items: flex-start;
           justify-content: flex-start;
           font-size: 1.75em;
      }
-     #proj-subtitle{
+     #proj-subtitle {
           font-size: 10px;
           justify-content: flex-start;
+     }
+}
+
+@media screen and (max-width: 330px) {
+     .list {
+          height: 40%;
+          padding: 20px 0;
+          display: flex;
+          justify-content: center;
+          
+     }
+     .list ul{
+          width: 90%;
+     }
+     .info {
+          height: 60%;
      }
 }
